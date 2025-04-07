@@ -1,6 +1,6 @@
 README.md
 
-✨ commit_codes_not_crimes ✨
+✨ <h1>commit_codes_not_crimes </h1> ✨
 
 Exploring SQL Window Functions (Assignment)
 
@@ -12,7 +12,7 @@ Exploring SQL Window Functions (Assignment)
       ID: 27094
 
 2. Names: Serge Irakoze
-      ID:
+	  ID:
 
 3. Names: Maniraguha Eric (Instuctor)
 
