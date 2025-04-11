@@ -27,7 +27,7 @@ In this assignment, we explore SQL Window Functions such as LAG(), LEAD(), RANK(
 
 <h3> Table creation </h3>
 
-![alt text](1.create_table.png)
+![alt text](<1.create_table.png>)
 
 <h3> Data ensertion </h3>
 
