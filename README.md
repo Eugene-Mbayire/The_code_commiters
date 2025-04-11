@@ -26,19 +26,25 @@ In this assignment, we explore SQL Window Functions such as LAG(), LEAD(), RANK(
 <hr>
 
 <h3> Table creation </h3>
-![alt text](<create_table.png>)
+
+![alt text](1.create_table.png)
 
 <h3> Data ensertion </h3>
+
 ![alt text](<2.inserting_data.png>)
 
 <h3> Values comparation </h3>
+
 ![alt text](<3.compare_values.png>)
 
 <h3> Top records identification </h3>
+
 ![alt text](<4.identifying_top_records.png>)
 
 <h3> Finding the earliest records </h3>
+
 ![alt text](<5.finding_the_earliest_records.png>)
 
 <h3> Aggrigation with the window functions </h3>
+
 ![alt text](<6.aggregation_with_window_functions.png>)	
