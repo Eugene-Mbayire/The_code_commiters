@@ -54,7 +54,8 @@ In this assignment, we explore SQL Window Functions such as LAG(), LEAD(), RANK(
 <h2> Explainations and real world application </h2>
 <hr>
 
-1. Compare Values with Previous or Next Records (LAG/LEAD)
+<b>1. Compare Values with Previous or Next Records (LAG/LEAD)</b>>
+
 Query Explanation:
 •	LAG() and LEAD() functions access previous and next rows' values respectively
 •	PARTITION BY category groups data by product category
