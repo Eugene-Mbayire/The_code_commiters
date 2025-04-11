@@ -57,6 +57,7 @@ In this assignment, we explore SQL Window Functions such as LAG(), LEAD(), RANK(
 <b>1. Compare Values with Previous or Next Records (LAG/LEAD)</b>>
 
 Query Explanation:
+
 •	LAG() and LEAD() functions access previous and next rows' values respectively
 •	PARTITION BY category groups data by product category
 •	ORDER BY sale_date ensures chronological comparison
@@ -69,7 +70,9 @@ Real-world Applications:
 •	Usage pattern detection for services or resources
 
 2. Ranking Data within a Category (RANK/DENSE_RANK)
+
 Query Explanation:
+
 •	Both functions rank sales by amount within each category
 •	RANK() assigns the same rank to ties but skips subsequent ranks
 •	DENSE_RANK() assigns the same rank to ties without skipping subsequent ranks
@@ -83,7 +86,9 @@ Real-world Applications:
 •	Competitive rankings in sports or contests
 
 3. Identifying Top Records
+
 Query Explanation:
+
 •	Creates a Common Table Expression (CTE) with DENSE_RANK() to rank products by sale amount
 •	Filters for only the top 3 products in each category
 •	DENSE_RANK() is preferred over RANK() here to ensure we get exactly 3 products even if there are ties
@@ -94,7 +99,9 @@ Real-world Applications:
 •	Market share analysis for top competitors in each segment
 
 4. Finding the Earliest Records
+
 Query Explanation:
+
 •	Uses ROW_NUMBER() partitioned by category and ordered by date
 •	Filters for only the first 2 sales in each category chronologically
 •	ROW_NUMBER() ensures we get exactly 2 rows even if multiple sales occur on the same date
@@ -105,11 +112,15 @@ Real-world Applications:
 •	Employee tenure tracking (first hires in each department)
 
 5. Aggregation with Window Functions
+
 Query Explanation:
+
 •	Calculates maximum sale amount at both category and overall levels
 •	Uses aggregates within window functions to compare individual sales to these maximums
 •	Calculates percentages to show relative performance
+
 Real-world Applications:
+
 •	Performance bench-marking against category leaders and overall top performers
 •	Goal setting based on top performers
 •	Bonus calculations based on relative performance
