@@ -1,31 +1,29 @@
 README.md
 
-✨ <h1>The_code_commiters </h1> ✨
+<h1 style="color: blue;">✨ The_code_commiters ✨</h1>
 
-Exploring SQL Window Functions (Assignment)
+<p style="color: darkgreen;">Exploring SQL Window Functions (Assignment)</p>
 
+<h2 style="color: blue;">👨‍💼 Group Members:</h2>
 
-👨‍💼 Group Members:
+<p style="color: darkgreen;">
+1. Names: Eugene Mbayire<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ID: 27094<br>
+2. Names: Serge Irakoze<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ID: 26980<br>
+3. Names: Maniraguha Eric (Instructor)
+</p>
 
-1. Names: Eugene Mbayire
-      ID: 27094
+<h2 style="color: blue;">🏛️ Objective</h2>
 
-2. Names: Serge Irakoze
-	  ID:26980
+<p style="color: darkgreen;">
+In this assignment, we explore SQL Window Functions such as <code>LAG()</code>, <code>LEAD()</code>, <code>RANK()</code>, <code>DENSE_RANK()</code>, <code>ROW_NUMBER()</code>, and aggregate window functions. We use them to perform analytical queries on a dataset and provide real-life applications for each case.
+</p>
 
-3. Names: Maniraguha Eric (Instuctor)
-
-
-🏛️ Objective
-
-In this assignment, we explore SQL Window Functions such as LAG(), LEAD(), RANK(), DENSE_RANK(), ROW_NUMBER(), and aggregate window functions. We use them to perform analytical queries on a dataset and provide real-life applications for each case.
-
-
-
-<h1>  SQL COMMANDS EXECUTED (OUTPUT SCREEN SHOTS) </h1>
+<h1 style="color: blue;">SQL COMMANDS EXECUTED (OUTPUT SCREENSHOTS)</h1>
 <hr>
 
-<h3> Table creation </h3>
+<h3 style="color: blue;">Table creation</h3>
 
 ```bash
 CREATE TABLE sales_data (
@@ -41,15 +39,13 @@ CREATE TABLE sales_data (
     unit_price DECIMAL(10, 2),
     sale_amount DECIMAL(10, 2)
 );
-
 ```
 
-
-<p>This SQL block is creating a table named sales_data in a database
-The sales_data table has 11 columns. Here's the list:
+<p style="color: darkgreen;">
+This SQL block is creating a table named <code>sales_data</code> in a database. The <code>sales_data</code> table has 11 columns. Here's the list:
 </p>
 
-<ul>
+<ul style="color: darkgreen;">
 <li>transaction_id</li>
 <li>sale_date</li>
 <li>product_id</li>
@@ -58,17 +54,17 @@ The sales_data table has 11 columns. Here's the list:
 <li>region</li>
 <li>salesperson_id</li>
 <li>salesperson_name</li>
+<li>quantity</li>
+<li>unit_price</li>
+<li>sale_amount</li>
+</ul>
 
-
-sale_amount
-
-<h4> Expected output:</h4>
-Table is created successfully.
+<h4 style="color: blue;">Expected output:</h4>
+<p style="color: darkgreen;">Table is created successfully.</p>
 
 ![alt text](<1.create_table.png>)
 
-<h3> Data ensertion </h3>
-
+<h3 style="color: blue;">Data insertion</h3>
 
 ```bash
 INSERT ALL
@@ -95,14 +91,14 @@ INSERT ALL
 SELECT * FROM dual;
 ```
 
-<p>,This SQL block is inserting multiple rows of data into the sales_data table. Each row represents a sales transaction with various attributes such as transaction ID, sale date, product details, salesperson information, and sale amount.
-The INSERT ALL statement allows for inserting multiple rows in a single command, which is efficient for bulk data insertion.
+<p style="color: darkgreen;">
+This SQL block is inserting multiple rows of data into the <code>sales_data</code> table. Each row represents a sales transaction with various attributes such as transaction ID, sale date, product details, salesperson information, and sale amount. The <code>INSERT ALL</code> statement allows for inserting multiple rows in a single command, which is efficient for bulk data insertion.
 </p>
-<h4> Expected output:</h4>
 
-![alt text](<2.inserting_data.png>)
+<h4 style="color: blue;">Expected output:</h4>
+<p style="color: darkgreen;">![alt text](<2.inserting_data.png>)</p>
 
-<h3> Compare Values with Previous or Next Records using LAG() and LEAD() </h3>
+<h3 style="color: blue;">Compare Values with Previous or Next Records using LAG() and LEAD()</h3>
 
 ```bash
 SELECT 
@@ -130,14 +126,15 @@ FROM
 ORDER BY 
     category, sale_date;
 ```
-<p>This SQL block is using the LAG() and LEAD() window functions to compare each sale amount with the previous and next sale amounts within the same product category. It also categorizes the comparison results as "HIGHER", "LOWER", or "EQUAL". The output is ordered by category and sale date.
-The LAG() function retrieves the previous sale amount, while the LEAD() function retrieves the next sale amount. The CASE statements determine the relationship between the current sale amount and the previous/next amounts.</p>
 
-<h4> Expected output:</h4>
+<p style="color: darkgreen;">
+This SQL block is using the <code>LAG()</code> and <code>LEAD()</code> window functions to compare each sale amount with the previous and next sale amounts within the same product category. It also categorizes the comparison results as "HIGHER", "LOWER", or "EQUAL". The output is ordered by category and sale date.
+</p>
 
-![alt text](<3.compare_values.png>)
+<h4 style="color: blue;">Expected output:</h4>
+<p style="color: darkgreen;">![alt text](<3.compare_values.png>)</p>
 
-<h3> Top records identification </h3>
+<h3 style="color: blue;">Top records identification</h3>
 
 ```bash
 SELECT 
@@ -153,14 +150,15 @@ FROM
 ORDER BY 
     category, sale_amount DESC;
 ```
-<p>This SQL block is using the RANK() and DENSE_RANK() window functions to rank sales transactions within each product category based on the sale amount. The results are ordered by category and sale amount in descending order.
-The RANK() function assigns a rank to each row within a partition of a result set, with gaps in the ranking for ties. The DENSE_RANK() function also assigns ranks but does not leave gaps for ties.</p>
 
-<h4> Expected output:</h4>
+<p style="color: darkgreen;">
+This SQL block is using the <code>RANK()</code> and <code>DENSE_RANK()</code> window functions to rank sales transactions within each product category based on the sale amount. The results are ordered by category and sale amount in descending order.
+</p>
 
-![alt text](<rank()_and_Dense_rank().png>)
+<h4 style="color: blue;">Expected output:</h4>
+<p style="color: darkgreen;">![alt text](<rank()_and_Dense_rank().png>)</p>
 
-<h3> Top records identification </h3>
+<h3 style="color: blue;">Top records identification</h3>
 
 ```bash
 SELECT 
@@ -176,13 +174,14 @@ WHERE
 ORDER BY 
     category, sale_rank;
 ```
-<p>This SQL block is using a Common Table Expression (CTE) named ranked_sales to rank sales transactions within each product category based on the sale amount. It then filters the results to show only the top 3 sales in each category.</p>
 
+<p style="color: darkgreen;">
+This SQL block is using a Common Table Expression (CTE) named ranked_sales to rank sales transactions within each product category based on the sale amount. It then filters the results to show only the top 3 sales in each category.
+</p>
 
 ![alt text](<4.identifying_top_records.png>)
 
-<h3> Finding the earliest records </h3>
-
+<h3 style="color: blue;">Finding the earliest records</h3>
 
 ```bash
 WITH ranked_by_date AS (
@@ -211,11 +210,13 @@ ORDER BY
     category, date_rank;
 ```
 
-<p>This SQL block is using the ROW_NUMBER() window function to rank sales transactions within each product category based on the sale date. It then filters the results to show only the first 2 sales in each category chronologically.</p>
+<p style="color: darkgreen;">
+This SQL block is using the <code>ROW_NUMBER()</code> window function to rank sales transactions within each product category based on the sale date. It then filters the results to show only the first 2 sales in each category chronologically.
+</p>
 
 ![alt text](<5.finding_the_earliest_records.png>)
 
-<h3> Aggrigation with the window functions </h3>
+<h3 style="color: blue;">Aggregation with the window functions</h3>
 
 ```bash
 SELECT 
@@ -231,109 +232,86 @@ ORDER BY
     category, sale_amount DESC;
 ```
 
-<p>This SQL block is using aggregate window functions to calculate the maximum and average sale amounts within each product category. The results are ordered by category and sale amount in descending order.</p>
-
+<p style="color: darkgreen;">
+This SQL block is using aggregate window functions to calculate the maximum and average sale amounts within each product category. The results are ordered by category and sale amount in descending order.
+</p>
 
 ![alt text](<6.aggregation_with_window_functions.png>)
 
-
-
-<h2> Explainations and real world application </h2>
+<h2 style="color: blue;">Explanations and real-world applications</h2>
 <hr>
 
-<b>1. Compare Values with Previous or Next Records (LAG/LEAD)</b>>
+<p style="color: darkgreen;">
+<b>1. Compare Values with Previous or Next Records (LAG/LEAD)</b><br>
+Query Explanation:<br>
+• LAG() and LEAD() functions access previous and next rows' values respectively<br>
+• PARTITION BY category groups data by product category<br>
+• ORDER BY sale_date ensures chronological comparison<br>
+• CASE statements translate numerical comparisons into "HIGHER", "LOWER", or "EQUAL"<br>
+Results: This query shows each sale with its previous and next sale amounts within the same category, and indicates whether the current sale amount is higher, lower, or equal compared to those values.<br>
+Real-world Applications:<br>
+• Sales trend analysis to identify growth or decline patterns within product categories<br>
+• Stock price movement analysis (up/down indicators)<br>
+• Performance tracking for employees, showing improvement or decline<br>
+• Usage pattern detection for services or resources
+</p>
 
-Query Explanation:
+<p style="color: darkgreen;">
+<b>2. Ranking Data within a Category (RANK/DENSE_RANK)</b><br>
+Query Explanation:<br>
+• Both functions rank sales by amount within each category<br>
+• RANK() assigns the same rank to ties but skips subsequent ranks<br>
+• DENSE_RANK() assigns the same rank to ties without skipping subsequent ranks<br>
+Real-world Applications:<br>
+• Performance evaluation systems that rank employees within departments<br>
+• Educational grading systems for class rankings<br>
+• Product performance analysis<br>
+• Competitive rankings in sports or contests
+</p>
 
-•	LAG() and LEAD() functions access previous and next rows' values respectively
-•	PARTITION BY category groups data by product category
-•	ORDER BY sale_date ensures chronological comparison
-•	CASE statements translate numerical comparisons into "HIGHER", "LOWER", or "EQUAL"
-Results: This query shows each sale with its previous and next sale amounts within the same category, and indicates whether the current sale amount is higher, lower, or equal compared to those values.
-Real-world Applications:
-•	Sales trend analysis to identify growth or decline patterns within product categories
-•	Stock price movement analysis (up/down indicators)
-•	Performance tracking for employees, showing improvement or decline
-•	Usage pattern detection for services or resources
+<p style="color: darkgreen;">
+<b>3. Identifying Top Records</b><br>
+Query Explanation:<br>
+• Creates a Common Table Expression (CTE) with DENSE_RANK() to rank products by sale amount<br>
+• Filters for only the top 3 products in each category<br>
+Real-world Applications:<br>
+• Identifying top-performing products, employees, or stores<br>
+• Featured product recommendations<br>
+• Performance bonus distribution<br>
+• Market share analysis for top competitors in each segment
+</p>
 
-2. Ranking Data within a Category (RANK/DENSE_RANK)
+<p style="color: darkgreen;">
+<b>4. Finding the Earliest Records</b><br>
+Query Explanation:<br>
+• Uses ROW_NUMBER() partitioned by category and ordered by date<br>
+• Filters for only the first 2 sales in each category chronologically<br>
+Real-world Applications:<br>
+• First customer analysis (early adopters)<br>
+• Identifying pioneer markets or regions<br>
+• Historical trend analysis from initial transactions<br>
+• Employee tenure tracking (first hires in each department)
+</p>
 
-Query Explanation:
+<p style="color: darkgreen;">
+<b>5. Aggregation with Window Functions</b><br>
+Query Explanation:<br>
+• Calculates maximum sale amount at both category and overall levels<br>
+• Uses aggregates within window functions to compare individual sales to these maximums<br>
+Real-world Applications:<br>
+• Performance bench-marking against category leaders and overall top performers<br>
+• Goal setting based on top performers<br>
+• Bonus calculations based on relative performance<br>
+• Market penetration analysis compared to category leaders
+</p>
 
-•	Both functions rank sales by amount within each category
-•	RANK() assigns the same rank to ties but skips subsequent ranks
-•	DENSE_RANK() assigns the same rank to ties without skipping subsequent ranks
-Differences with Example: If we have sales of $2000, $1500, $1500, $1000:
-•	RANK(): 1, 2, 2, 4 (skips rank 3)
-•	DENSE_RANK(): 1, 2, 2, 3 (doesn't skip)
-Real-world Applications:
-•	Performance evaluation systems that rank employees within departments
-•	Educational grading systems for class rankings
-•	Product performance analysis
-•	Competitive rankings in sports or contests
+<h2 style="color: blue;">Summary</h2>
 
-3. Identifying Top Records
-
-Query Explanation:
-
-•	Creates a Common Table Expression (CTE) with DENSE_RANK() to rank products by sale amount
-•	Filters for only the top 3 products in each category
-•	DENSE_RANK() is preferred over RANK() here to ensure we get exactly 3 products even if there are ties
-Real-world Applications:
-•	Identifying top-performing products, employees, or stores
-•	Featured product recommendations
-•	Performance bonus distribution
-•	Market share analysis for top competitors in each segment
-
-4. Finding the Earliest Records
-
-Query Explanation:
-
-•	Uses ROW_NUMBER() partitioned by category and ordered by date
-•	Filters for only the first 2 sales in each category chronologically
-•	ROW_NUMBER() ensures we get exactly 2 rows even if multiple sales occur on the same date
-Real-world Applications:
-•	First customer analysis (early adopters)
-•	Identifying pioneer markets or regions
-•	Historical trend analysis from initial transactions
-•	Employee tenure tracking (first hires in each department)
-
-5. Aggregation with Window Functions
-
-Query Explanation:
-
-•	Calculates maximum sale amount at both category and overall levels
-•	Uses aggregates within window functions to compare individual sales to these maximums
-•	Calculates percentages to show relative performance
-
-Real-world Applications:
-
-•	Performance bench-marking against category leaders and overall top performers
-•	Goal setting based on top performers
-•	Bonus calculations based on relative performance
-•	Market penetration analysis compared to category leaders
-
-
-Summary:
-
-Window functions offer powerful analytical capabilities by performing calculations across related rows without collapsing them via GROUP BY. They're essential for:
-
-1.	Comparative Analysis: Analyzing current values against previous/next periods
-2.	Rankings and Hierarchies: Establishing ordering within groups
-3.	Moving Aggregates: Calculating running totals or moving averages
-4.	Relative Performance: Comparing individual records against group metrics
-
-These functions are extensively used in business intelligence, financial analysis, performance evaluation, and sales analytic to derive insights that would be complex or impossible with standard SQL queries
-
-
-<style>
-    p{
-        font-size: 16px;
-        line-height: 1.5;
-        color: blue;
-    }
-    h3{
-        font-size: 24px;
-        color: green;
-    }
-    </style>
+<p style="color: darkgreen;">
+Window functions offer powerful analytical capabilities by performing calculations across related rows without collapsing them via GROUP BY. They're essential for:<br>
+1. Comparative Analysis: Analyzing current values against previous/next periods<br>
+2. Rankings and Hierarchies: Establishing ordering within groups<br>
+3. Moving Aggregates: Calculating running totals or moving averages<br>
+4. Relative Performance: Comparing individual records against group metrics<br>
+These functions are extensively used in business intelligence, financial analysis, performance evaluation, and sales analytics to derive insights that would be complex or impossible with standard SQL queries.
+</p>
