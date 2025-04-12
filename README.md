@@ -45,28 +45,20 @@ CREATE TABLE sales_data (
 ```
 
 
-This SQL block is creating a table named sales_data in a database
+<p>This SQL block is creating a table named sales_data in a database
 The sales_data table has 11 columns. Here's the list:
+</p>
 
-transaction_id
+<ul>
+<li>transaction_id</li>
+<li>sale_date</li>
+<li>product_id</li>
+<li>product_name</li>
+<li>category</li>
+<li>region</li>
+<li>salesperson_id</li>
+<li>salesperson_name</li>
 
-sale_date
-
-product_id
-
-product_name
-
-category
-
-region
-
-salesperson_id
-
-salesperson_name
-
-quantity
-
-unit_price
 
 sale_amount
 
@@ -103,8 +95,11 @@ INSERT ALL
 SELECT * FROM dual;
 ```
 
-This SQL block is inserting multiple rows of data into the sales_data table. Each row represents a sales transaction with various attributes such as transaction ID, sale date, product details, salesperson information, and sale amount.
+<p>,This SQL block is inserting multiple rows of data into the sales_data table. Each row represents a sales transaction with various attributes such as transaction ID, sale date, product details, salesperson information, and sale amount.
 The INSERT ALL statement allows for inserting multiple rows in a single command, which is efficient for bulk data insertion.
+</p>
+<h4> Expected output:</h4>
+
 ![alt text](<2.inserting_data.png>)
 
 <h3> Compare Values with Previous or Next Records using LAG() and LEAD() </h3>
@@ -135,8 +130,8 @@ FROM
 ORDER BY 
     category, sale_date;
 ```
-This SQL block is using the LAG() and LEAD() window functions to compare each sale amount with the previous and next sale amounts within the same product category. It also categorizes the comparison results as "HIGHER", "LOWER", or "EQUAL". The output is ordered by category and sale date.
-The LAG() function retrieves the previous sale amount, while the LEAD() function retrieves the next sale amount. The CASE statements determine the relationship between the current sale amount and the previous/next amounts.
+<p>This SQL block is using the LAG() and LEAD() window functions to compare each sale amount with the previous and next sale amounts within the same product category. It also categorizes the comparison results as "HIGHER", "LOWER", or "EQUAL". The output is ordered by category and sale date.
+The LAG() function retrieves the previous sale amount, while the LEAD() function retrieves the next sale amount. The CASE statements determine the relationship between the current sale amount and the previous/next amounts.</p>
 
 <h4> Expected output:</h4>
 
@@ -158,8 +153,8 @@ FROM
 ORDER BY 
     category, sale_amount DESC;
 ```
-This SQL block is using the RANK() and DENSE_RANK() window functions to rank sales transactions within each product category based on the sale amount. The results are ordered by category and sale amount in descending order.
-The RANK() function assigns a rank to each row within a partition of a result set, with gaps in the ranking for ties. The DENSE_RANK() function also assigns ranks but does not leave gaps for ties.
+<p>This SQL block is using the RANK() and DENSE_RANK() window functions to rank sales transactions within each product category based on the sale amount. The results are ordered by category and sale amount in descending order.
+The RANK() function assigns a rank to each row within a partition of a result set, with gaps in the ranking for ties. The DENSE_RANK() function also assigns ranks but does not leave gaps for ties.</p>
 
 <h4> Expected output:</h4>
 
@@ -181,7 +176,7 @@ WHERE
 ORDER BY 
     category, sale_rank;
 ```
-This SQL block is using a Common Table Expression (CTE) named ranked_sales to rank sales transactions within each product category based on the sale amount. It then filters the results to show only the top 3 sales in each category.
+<p>This SQL block is using a Common Table Expression (CTE) named ranked_sales to rank sales transactions within each product category based on the sale amount. It then filters the results to show only the top 3 sales in each category.</p>
 
 
 ![alt text](<4.identifying_top_records.png>)
@@ -216,7 +211,7 @@ ORDER BY
     category, date_rank;
 ```
 
-This SQL block is using the ROW_NUMBER() window function to rank sales transactions within each product category based on the sale date. It then filters the results to show only the first 2 sales in each category chronologically.
+<p>This SQL block is using the ROW_NUMBER() window function to rank sales transactions within each product category based on the sale date. It then filters the results to show only the first 2 sales in each category chronologically.</p>
 
 ![alt text](<5.finding_the_earliest_records.png>)
 
@@ -236,7 +231,7 @@ ORDER BY
     category, sale_amount DESC;
 ```
 
-This SQL block is using aggregate window functions to calculate the maximum and average sale amounts within each product category. The results are ordered by category and sale amount in descending order.
+<p>This SQL block is using aggregate window functions to calculate the maximum and average sale amounts within each product category. The results are ordered by category and sale amount in descending order.</p>
 
 
 ![alt text](<6.aggregation_with_window_functions.png>)
@@ -329,3 +324,11 @@ Window functions offer powerful analytical capabilities by performing calculatio
 4.	Relative Performance: Comparing individual records against group metrics
 
 These functions are extensively used in business intelligence, financial analysis, performance evaluation, and sales analytic to derive insights that would be complex or impossible with standard SQL queries
+
+
+<style>
+    p{
+        font-size: 16px;
+        line-height: 1.5;
+        color: blue;
+    }
