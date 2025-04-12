@@ -71,7 +71,7 @@ Table is created successfully.
 ![alt text](<1.create_table.png>)
 
 <h3> Data ensertion </h3>
-```bash
+```sql
 INSERT ALL
   INTO sales_data VALUES (1, TO_DATE('2024-01-05', 'YYYY-MM-DD'), 101, 'Laptop Pro', 'Electronics', 'North', 1, 'John Smith', 2, 1200.00, 2400.00)
   INTO sales_data VALUES (2, TO_DATE('2024-01-10', 'YYYY-MM-DD'), 102, 'Smartphone X', 'Electronics', 'South', 2, 'Emma Johnson', 5, 800.00, 4000.00)
@@ -124,7 +124,8 @@ FROM
     sales_data
 ORDER BY 
     category, sale_date;
-    ```
+```
+
 
 ![alt text](<3.compare_values.png>)
 
