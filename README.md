@@ -72,6 +72,7 @@ sale_amount
 
 <h4> Expected output:</h4>
 Table is created successfully.
+
 ![alt text](<1.create_table.png>)
 
 <h3> Data ensertion </h3>
@@ -134,9 +135,47 @@ FROM
 ORDER BY 
     category, sale_date;
 ```
+This SQL block is using the LAG() and LEAD() window functions to compare each sale amount with the previous and next sale amounts within the same product category. It also categorizes the comparison results as "HIGHER", "LOWER", or "EQUAL". The output is ordered by category and sale date.
+The LAG() function retrieves the previous sale amount, while the LEAD() function retrieves the next sale amount. The CASE statements determine the relationship between the current sale amount and the previous/next amounts.
 
+<h4> Expected output:</h4>
 
 ![alt text](<3.compare_values.png>)
+
+<h3> Top records identification </h3>
+
+```bash
+SELECT 
+    transaction_id,
+    product_name,
+    category,
+    region,
+    sale_amount,
+    RANK() OVER (PARTITION BY category ORDER BY sale_amount DESC) AS rank_in_category,
+    DENSE_RANK() OVER (PARTITION BY category ORDER BY sale_amount DESC) AS dense_rank_in_category
+FROM 
+    sales_data
+ORDER BY 
+    category, sale_amount DESC;
+```
+This SQL block is using the RANK() and DENSE_RANK() window functions to rank sales transactions within each product category based on the sale amount. The results are ordered by category and sale amount in descending order.
+The RANK() function assigns a rank to each row within a partition of a result set, with gaps in the ranking for ties. The DENSE_RANK() function also assigns ranks but does not leave gaps for ties.
+
+```bash
+SELECT 
+    transaction_id,
+    product_name,
+    category,
+    sale_amount,
+    sale_rank
+FROM 
+    ranked_sales
+WHERE 
+    sale_rank <= 3
+ORDER BY 
+    category, sale_rank;
+```
+This SQL block is using a Common Table Expression (CTE) named ranked_sales to rank sales transactions within each product category based on the sale amount. It then filters the results to show only the top 3 sales in each category.
 
 <h3> Top records identification </h3>
 
