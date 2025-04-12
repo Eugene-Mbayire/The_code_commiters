@@ -161,6 +161,11 @@ ORDER BY
 This SQL block is using the RANK() and DENSE_RANK() window functions to rank sales transactions within each product category based on the sale amount. The results are ordered by category and sale amount in descending order.
 The RANK() function assigns a rank to each row within a partition of a result set, with gaps in the ranking for ties. The DENSE_RANK() function also assigns ranks but does not leave gaps for ties.
 
+<h4> Expected output:</h4>
+
+![alt text](<rank()_and_Dense_rank().png>)
+
+
 ```bash
 SELECT 
     transaction_id,
