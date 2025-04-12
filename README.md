@@ -26,6 +26,7 @@ In this assignment, we explore SQL Window Functions such as LAG(), LEAD(), RANK(
 <hr>
 
 <h3> Table creation </h3>
+
 ```bash
 CREATE TABLE sales_data (
     transaction_id INT PRIMARY KEY,
@@ -40,7 +41,10 @@ CREATE TABLE sales_data (
     unit_price DECIMAL(10, 2),
     sale_amount DECIMAL(10, 2)
 );
+
 ```
+
+
 This SQL block is creating a table named sales_data in a database
 The sales_data table has 11 columns. Here's the list:
 
@@ -71,7 +75,9 @@ Table is created successfully.
 ![alt text](<1.create_table.png>)
 
 <h3> Data ensertion </h3>
-```sql
+
+
+```bash
 INSERT ALL
   INTO sales_data VALUES (1, TO_DATE('2024-01-05', 'YYYY-MM-DD'), 101, 'Laptop Pro', 'Electronics', 'North', 1, 'John Smith', 2, 1200.00, 2400.00)
   INTO sales_data VALUES (2, TO_DATE('2024-01-10', 'YYYY-MM-DD'), 102, 'Smartphone X', 'Electronics', 'South', 2, 'Emma Johnson', 5, 800.00, 4000.00)
@@ -95,6 +101,9 @@ INSERT ALL
   INTO sales_data VALUES (20, TO_DATE('2024-04-10', 'YYYY-MM-DD'), 120, 'Toaster', 'Appliances', 'West', 4, 'Lisa Davis', 2, 45.00, 90.00)
 SELECT * FROM dual;
 ```
+
+This SQL block is inserting multiple rows of data into the sales_data table. Each row represents a sales transaction with various attributes such as transaction ID, sale date, product details, salesperson information, and sale amount.
+The INSERT ALL statement allows for inserting multiple rows in a single command, which is efficient for bulk data insertion.
 ![alt text](<2.inserting_data.png>)
 
 <h3> Compare Values with Previous or Next Records using LAG() and LEAD() </h3>
