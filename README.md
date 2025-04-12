@@ -165,6 +165,7 @@ The RANK() function assigns a rank to each row within a partition of a result se
 
 ![alt text](<rank()_and_Dense_rank().png>)
 
+<h3> Top records identification </h3>
 
 ```bash
 SELECT 
@@ -182,15 +183,61 @@ ORDER BY
 ```
 This SQL block is using a Common Table Expression (CTE) named ranked_sales to rank sales transactions within each product category based on the sale amount. It then filters the results to show only the top 3 sales in each category.
 
-<h3> Top records identification </h3>
 
 ![alt text](<4.identifying_top_records.png>)
 
 <h3> Finding the earliest records </h3>
 
+
+```bash
+WITH ranked_by_date AS (
+    SELECT 
+        transaction_id,
+        sale_date,
+        product_name,
+        category,
+        sale_amount,
+        ROW_NUMBER() OVER (PARTITION BY category ORDER BY sale_date) AS date_rank
+    FROM 
+        sales_data
+)
+SELECT 
+    transaction_id,
+    sale_date,
+    product_name,
+    category,
+    sale_amount,
+    date_rank
+FROM 
+    ranked_by_date
+WHERE 
+    date_rank <= 2
+ORDER BY 
+    category, date_rank;
+```
+
+This SQL block is using the ROW_NUMBER() window function to rank sales transactions within each product category based on the sale date. It then filters the results to show only the first 2 sales in each category chronologically.
+
 ![alt text](<5.finding_the_earliest_records.png>)
 
 <h3> Aggrigation with the window functions </h3>
+
+```bash
+SELECT 
+    transaction_id,
+    product_name,
+    category,
+    sale_amount,
+    MAX(sale_amount) OVER (PARTITION BY category) AS max_sale_amount,
+    AVG(sale_amount) OVER (PARTITION BY category) AS avg_sale_amount
+FROM 
+    sales_data
+ORDER BY 
+    category, sale_amount DESC;
+```
+
+This SQL block is using aggregate window functions to calculate the maximum and average sale amounts within each product category. The results are ordered by category and sale amount in descending order.
+
 
 ![alt text](<6.aggregation_with_window_functions.png>)
 
